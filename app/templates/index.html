@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form id="redirectForm" action="https://api.random.org/verify" method="post" target="_blank">
+            <input name="format" value="json" type="hidden">
+            <input id="random" name="random" value="{&quot;method&quot;:&quot;{{ method }}&quot;,&quot;hashedApiKey&quot;:&quot;{{apikey}}&quot;,&quot;n&quot;:{{n}},&quot;min&quot;:{{min}},&quot;max&quot;:{{max}},&quot;replacement&quot;:true,&quot;base&quot;:10,&quot;data&quot;:{{data}},&quot;license&quot;:{&quot;type&quot;:&quot;developer&quot;,&quot;text&quot;:&quot;Random values licensed strictly for development and testing only&quot;,&quot;infoUrl&quot;:null},&quot;userData&quot;:null,&quot;completionTime&quot;:&quot;{{compltime}}&quot;,&quot;serialNumber&quot;:{{serialNumber}}}" type="hidden">
+            <input id="signature" name="signature" value="{{signature}}" type="hidden">
+            
+            <span class="pay-btn pay-btn-2" style="font-size: 24px;">
+                <input type="submit" style="background: none; border: none;" value="Перейти на Random.org">
+            </span>
+        
+        
+        <script>
+            document.getElementById("random").value = findGetParameter("random");
+            document.getElementById("signature").value = findGetParameter("signature");
+        </script>
+    </form>
+    </body>
